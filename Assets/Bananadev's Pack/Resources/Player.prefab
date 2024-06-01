@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6978825246202418961
 Transform:
   m_ObjectHideFlags: 0
@@ -127,6 +127,8 @@ GameObject:
   - component: {fileID: 3824932751483481999}
   - component: {fileID: 160506550746497081}
   - component: {fileID: 1727149097580681171}
+  - component: {fileID: 7108340498842915717}
+  - component: {fileID: 2177655569297468832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -144,7 +146,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.43, z: 0}
-  m_LocalScale: {x: 1, y: 1.4439, z: 1}
+  m_LocalScale: {x: 1, y: 1.5126296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6978825246202418961}
@@ -230,13 +232,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4696620447554813797}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00ca9ead927e245f1ab28f266c808ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
   maxVelocityChange: 10
+  sprintSpeed: 14
+  jumpHeight: 5
+  airControl: 0.5
 --- !u!54 &4497188721155797053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -320,3 +325,38 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &7108340498842915717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696620447554813797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76c190c136d1416aa2145336e326e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 7482944027092858696}
+  camera: {fileID: 4636968767399730492}
+--- !u!135 &2177655569297468832
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696620447554813797}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.47
+  m_Center: {x: 0, y: -0.617, z: 0}

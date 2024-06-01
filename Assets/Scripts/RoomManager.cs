@@ -33,7 +33,9 @@ public class NewBehaviourScript : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        //this syncs the player creation and logic
         GameObject _player = PhotonNetwork.Instantiate(player.name ,spawnPoint.position ,Quaternion.identity);
-
+        //this applies camera and own movement for local only , not all instantiated objects
+        _player.GetComponent<PlayerSetup>().IsLocalPlayer();
     }
 }
